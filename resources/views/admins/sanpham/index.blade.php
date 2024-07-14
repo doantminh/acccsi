@@ -13,8 +13,6 @@
             <th>mô tả</th>
             <th>danh mục</th>
             <th>trạng thái</th>
-            <th>
-            </th>
         </thead>
         <tbody>
             <?php foreach ($sanpham as $sanpham) : ?>
@@ -27,7 +25,7 @@
                     <td>{{$sanpham->ngay_nhap}}</td>
                     <td>{{$sanpham->mo_ta}}</td>
                     <td>{{$sanpham->danh_muc_id}}</td>
-                    <td>{{$taikhoan->trang_thai == 1 ? 'còn hàng' : 'hết hàng' }}</td>
+                    <td>{{$sanpham->trang_thai == 1 ? 'còn hàng' : 'hết hàng' }}</td>
                     
                 </tr>
             <?php endforeach ?>

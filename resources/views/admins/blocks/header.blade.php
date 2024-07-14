@@ -20,13 +20,13 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('sanpham.index') }}">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Bình luận</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('binhluan.index') }}">Bình luận</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Đơn hàng</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('donhang.index') }}">Đơn hàng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Phương thức thanh toán</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('phuongthucthanhtoan.index') }}">Phương thức thanh toán</a>
                 </li>
 
             </ul>

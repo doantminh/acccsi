@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\admins\BinhLuanContrller;
 use App\Http\Controllers\admins\ChucVuController;
 use App\Http\Controllers\admins\DanhMucController;
+use App\Http\Controllers\admins\DonHangController;
 use App\Http\Controllers\admins\HomeController;
+use App\Http\Controllers\admins\PhuongThucThanhToanController;
 use App\Http\Controllers\admins\SanPhamController;
 use App\Http\Controllers\admins\TaiKhoanController;
 use App\Models\DanhMuc;
+use App\Models\PhuongThucThanhToan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +35,11 @@ Route::resource('taikhoan', TaiKhoanController::class);
 Route::resource('danhmuc', DanhMucController::class);
 
 Route::resource('sanpham', SanPhamController::class);
+
+Route::resource('binhluan', BinhLuanContrller::class);
+
+Route::resource('donhang', DonHangController::class);
+
+Route::resource('phuongthucthanhtoan', PhuongThucThanhToanController::class);
+
+
