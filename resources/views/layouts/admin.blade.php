@@ -21,7 +21,7 @@
         <aside class="col-3">
             
         </aside>
-        <div class="content col-9 container">
+        <div class="content">
             {{-- @yield chỉ định section có tên trong yield được hiển thị --}}
             @yield('content')
         </div>

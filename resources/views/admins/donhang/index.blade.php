@@ -1,7 +1,22 @@
-@include('admins.index')
+@extends('layouts.admin')
+@section('title')
+    {{ $title }}
+@endsection
 
-<div class="container p-4">
-    
+@section('css')
+
+@endsection
+
+@section('content')
+
+    <div class="my-5">
+        {{-- Hiển thị thông báo --}}
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+    <h4>{{ $title }}</h4>
     <table class="table table-hover table-dark">
         <thead class="table-primary">
             <th>id</th>
@@ -16,6 +31,9 @@
             <th>ghi chú</th>       
             <th>phương thúc thanh toán</th>
             <th>trạng thái</th>
+            <th>
+            <a href="{{ route('donhang.create') }}" class="btn btn-outline-primary" style="width: 110px; ">Thêm</a>
+            </th>
         </thead>
         <tbody>
             <?php foreach ($donhang as $donhang) : ?>
@@ -32,8 +50,13 @@
                     <td>{{$donhang->ghi_chu}}</td>
                     <td>{{$donhang->phuong_thuc_thanh_toan_id}}</td>
                     <td>{{$donhang->trang_thai_don_hang_id }}</td> 
+                    <td></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
     </table>
-</div>
+    @endsection
+
+@section('js')
+
+@endsection

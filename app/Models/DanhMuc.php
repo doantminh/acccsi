@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class DanhMuc extends Model
 {
     use HasFactory;
+    protected $table = 'danh_mucs';
+    protected $fillable = [
+        'ten_danh_muc',
+        'hinh_anh',
+        'mo_ta',
+    ];
+
+    public $timestamps = false;
 }
