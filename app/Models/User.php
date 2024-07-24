@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -17,11 +18,6 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -38,8 +34,26 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+    use HasFactory;
+    protected $table = 'users';
+    protected $fillable = [
+        'anh_dai_dien',
+        'name',
+        'email',
+        'so_dien_thoai',
+        'gioi_tinh',
+        'dia_chi',
+        'password',
+        'mat_khau',
+        'chuc_vu_id',
+        'trang_thai',
+        'deleted_at'
     ];
+    public function updateUser($id, $data)
+    {
+        DB::table('users')
+            ->where('id', $id)
+            ->update($data);
+    }
+    public $timestamps = false;
 }

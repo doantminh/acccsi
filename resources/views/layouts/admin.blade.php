@@ -1,41 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    
+<!-- Mirrored from zoyothemes.com/tapeli/html/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jul 2024 08:33:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @yield('css')
-</head>
 
-<body>
-    <div class="container">
-    <header>
-        @include('admins.blocks.header')
-    </header>
-    <main class="row mx-3">
-        <aside class="col-3">
+        <meta charset="utf-8" />
+        <title>Dashboard | Tapeli - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
+        <meta name="author" content="Zoyothemes"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.ico') }}">
+
+        <!-- App css -->
+        <link href="{{ asset('assets/admin/css/app.min.css ') }}" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- Icons -->
+        <link href="{{ asset('assets/admin/css/icons.min.css ') }}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <!-- body start -->
+    <body data-menu-color="light" data-sidebar="default">
+
+        <!-- Begin page -->
+        <div id="app-layout">
+
+            @include('admins.blocks.header')
             
-        </aside>
-        <div class="content">
-            {{-- @yield chỉ định section có tên trong yield được hiển thị --}}
-            @yield('content')
-        </div>
-    </main>
-    <footer>
-        
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            <!-- Left Sidebar Start -->
+            @include('admins.blocks.sidebar')
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                 <!-- content -->
+                    @yield('content')
+                <!-- Footer Start -->
+                @include('admins.blocks.footer')
+                <!-- end Footer -->
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Vendor -->
+        <script src="{{ asset('assets/admin/libs/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/node-waves/waves.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/jquery.counterup/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/libs/feather-icons/feather.min.js') }}"></script>
+
+        <!-- Apexcharts JS -->
+        <script src="{{ asset('assets/admin/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+        <!-- for basic area chart -->
+        <script src="../../../apexcharts.com/samples/{{ asset('assets/admin/stock-prices.js') }}"></script>
+
+        <!-- Widgets Init Js -->
+        <script src="{{ asset('assets/admin/js/pages/analytics-dashboard.init.js') }}"></script>
+
+        <!-- App js-->
+        <script src="{{ asset('assets/admin/js/app.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+@yield('js')
+    </body>
 
-    @yield('js')
-    </div>
-</body>
-
+<!-- Mirrored from zoyothemes.com/tapeli/html/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jul 2024 08:34:03 GMT -->
 </html>

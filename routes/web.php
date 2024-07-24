@@ -7,7 +7,8 @@ use App\Http\Controllers\admins\DonHangController;
 use App\Http\Controllers\admins\HomeController;
 use App\Http\Controllers\admins\PhuongThucThanhToanController;
 use App\Http\Controllers\admins\SanPhamController;
-use App\Http\Controllers\admins\TaiKhoanController;
+use App\Http\Controllers\admins\UserController;
+use App\Http\Controllers\clients\TrangChuController;
 use App\Models\DanhMuc;
 use App\Models\PhuongThucThanhToan;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +27,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', [HomeController::class, 'index']);
+
+Route::get('/home', [TrangChuController::class, 'index']);
+
+Route::resource('admin', HomeController::class);
 
 Route::resource('chucvu', ChucVuController::class);
 
-Route::resource('taikhoan', TaiKhoanController::class);
+Route::resource('user', UserController::class);
 
 Route::resource('danhmuc', DanhMucController::class);
 

@@ -4,9 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class DanhMuc extends Model
 {
+
+    public function updateDanhmuc($id, $data)
+    {
+        DB::table('danh_mucs')
+            ->where('id', $id)
+            ->update($data);
+    }
     use HasFactory;
     protected $table = 'danh_mucs';
     protected $fillable = [
@@ -16,4 +24,5 @@ class DanhMuc extends Model
     ];
 
     public $timestamps = false;
+
 }

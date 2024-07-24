@@ -14,7 +14,11 @@
                 {{ session('success') }}
             </div>
         @endif
-    
+        @if (session('erorr'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
     <table class="table table-hover table-dark ">
         <thead class="table-primary">
             <th>ID</th>
@@ -28,7 +32,9 @@
                 <tr>
                     <td>{{$chucvu->id}}</td>
                     <td>{{$chucvu->ten_chuc_vu}}</td>
-                    <td></td>
+                    <td>
+                    <a href="{{ route('chucvu.edit',$chucvu->id) }}" class="btn btn-outline-primary" style="width: 50px; ">sửa</a>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>

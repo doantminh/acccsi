@@ -17,9 +17,9 @@
             </div>
         @endif
     <h4>{{ $title }}</h4>
-    <table class="table table-hover table-dark">
+    <table class="table table-hover table-dark" style="text-align: center;">
         <thead class="table-primary">
-            <th>id</th>
+            <th>STT</th>
             <th>mã đơn hàng</th>
             <th>người dùng</th>
             <th>tên người nhận</th>
@@ -32,13 +32,16 @@
             <th>phương thúc thanh toán</th>
             <th>trạng thái</th>
             <th>
-            <a href="{{ route('donhang.create') }}" class="btn btn-outline-primary" style="width: 110px; ">Thêm</a>
+            <a href="{{ route('donhang.create') }}" class="btn btn-outline-primary" style="width: 110px; ">
+            <i data-feather="plus-circle"></i>
+            <span> Thêm </span>
+            </a>
             </th>
         </thead>
         <tbody>
-            <?php foreach ($donhang as $donhang) : ?>
+            <?php foreach ($donhang as $i => $donhang) : ?>
                 <tr>
-                    <td>{{$donhang->id}}</td>
+                    <td>{{$i + 1}}</td>
                     <td>{{$donhang->ma_don_hang}}</td>
                     <td>{{$donhang->tai_khoan_id}}</td>
                     <td>{{$donhang->ten_nguoi_nhan}}</td>

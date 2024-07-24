@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class ChucVu extends Model
 {
@@ -12,6 +13,11 @@ class ChucVu extends Model
     protected $fillable = [
         'ten_chuc_vu',
     ];
+    public function updateChucVu($id, $data){
+        DB::table('chuc_vus')
+        ->where('id', $id)
+        ->update($data);
+    }
 
     public $timestamps = false;
 }

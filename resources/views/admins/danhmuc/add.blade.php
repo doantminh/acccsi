@@ -1,12 +1,15 @@
 {{-- extends dùng để kế thừa master layout --}}
 @extends('layouts.admin')
-
+@section('title')
+{{ $title }}
+@endsection
 
 @section('css')
 @endsection
 
 @section('content')
     <div class="card my-5">
+    <h4 class="p-3">{{ $title }}</h4>
         <div class="card-body">
             <form action="{{ route('danhmuc.store') }}" method="POST" enctype="multipart/form-data">
                 {{-- Làm việc với Form trong Laravel --}}
