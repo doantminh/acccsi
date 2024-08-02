@@ -13,6 +13,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const ROLE_ADMIN = 'Admin';
+
+    const ROLE_USER = 'User';
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +30,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+    protected $casts = [
+        'email_verified_at'=>'datetime',
+        'password' => 'hashed',
     ];
 
     /**
@@ -49,11 +56,20 @@ class User extends Authenticatable
         'trang_thai',
         'deleted_at'
     ];
+    public function binhLuan(){
+        return $this->hasMany(BinhLuan::class);
+    }
+    public function donHang(){
+        return $this->hasMany(DonHang::class);
+    }
     public function updateUser($id, $data)
     {
         DB::table('users')
             ->where('id', $id)
             ->update($data);
+    }
+    public function chucVu(){
+        return $this->belongsTo(ChucVu::class);
     }
     public $timestamps = false;
 }

@@ -80,4 +80,11 @@ class UserController extends Controller
             return redirect()->route('user.index')->with('success', 'Xóa sản phẩm thành công!');
         }
     }
+    public function show(string $id){
+        $title = 'Thông tin tài khoản';
+        $user = User::query()->findOrFail($id);
+        $chucvu = DB::table('chuc_vus')->get();
+        
+        return view('admins.user.detail',compact('user','title','chucvu'));
+    }
 }

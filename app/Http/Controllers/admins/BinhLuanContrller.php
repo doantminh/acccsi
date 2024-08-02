@@ -25,4 +25,12 @@ class BinhLuanContrller extends Controller
             return redirect()->route('binhluan.index')->with('success', 'Thêm chức vụ thành công!');
         }
     }
+    public function destroy(string $id ){
+        $binhluan = BinhLuan::query()->findOrFail($id);
+        if ($binhluan) {
+            $binhluan->delete();
+
+            return redirect()->route('sanpham.index')->with('success', 'Xóa sản phẩm thành công!');
+        }
+    }
 }

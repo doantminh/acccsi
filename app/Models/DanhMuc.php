@@ -15,6 +15,9 @@ class DanhMuc extends Model
             ->where('id', $id)
             ->update($data);
     }
+    public function sanPham(){
+        return $this->hasMany(SanPham::class);
+    }
     use HasFactory;
     protected $table = 'danh_mucs';
     protected $fillable = [

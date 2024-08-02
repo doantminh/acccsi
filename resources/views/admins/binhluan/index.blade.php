@@ -30,7 +30,7 @@
         <?php foreach ($binhluan as $binhluan) : ?>
                 <tr>
                     <td>{{$binhluan->id}}</td>
-                    <td>{{$binhluan->tai_khoan_id}}</td>
+                    <td>{{$binhluan->user_id}}</td>
                     <td>{{$binhluan->san_pham_id}}</td>
                     <td>{{$binhluan->noi_dung}}</td>
                     <td>{{$binhluan->thoi_gian}}</td>

@@ -41,14 +41,14 @@
                     <td>{{$danhmuc->ten_danh_muc}}</td>
                     <td>{{$danhmuc->mo_ta}}</td>
                     <td>
-                        <a href="{{ route('danhmuc.edit',$danhmuc->id) }}" class="btn btn-outline-primary" style="width: 50px; ">
+                        <a href="{{ route('danhmuc.edit',$danhmuc->id) }}" class="btn btn-dark" style="width: 50px; ">
                             <i data-feather="edit"></i>
                         </a>
 
                         <form action="{{ route('danhmuc.destroy',$danhmuc->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Bạn có đồng ý xóa hay không?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-primary" style="width: 50px; ">
+                            <button type="submit" class="btn btn-dark" style="width: 50px; ">
                                 <i data-feather="trash-2"></i>
                             </button>
                         </form>

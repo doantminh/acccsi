@@ -75,7 +75,7 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label class="form-label">Chức vụ:</label>
                 <select class="form-select @error('chuc_vu_id') is-invalid @enderror" name="chuc_vu_id">
                     <option selected>Chức vụ</option>
@@ -88,7 +88,7 @@
                 @error('chuc_vu_id')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> -->
 
             <div class="mb-3">
                 <label class="form-label">trạng thái:</label>

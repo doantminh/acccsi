@@ -28,12 +28,9 @@
             <th>STT</th>
             <th>ảnh đại diện</th>
             <th>họ và tên</th>
-            <th>email</th>
-            <th>số điện thoại</th>
             <th>giới tính</th>
-            <th>địa chỉ</th>
-            <th>chức vụ</th>
             <th>trạng thái</th>
+            <th></th>
             <th>
                 <a href="{{ route('user.create') }}" class="btn btn-outline-primary" style="width: 110px; ">
                     <i data-feather="plus-circle"></i>
@@ -49,21 +46,22 @@
                         <img src="{{Storage::url($user->anh_dai_dien)}}" width="100px" alt="ảnh đại diện">
                     </td>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->so_dien_thoai}}</td>
-                    <td>{{$user->gioi_tinh}}</td>
-                    <td>{{$user->dia_chi}}</td>
-                    <td>{{$user->chuc_vu_id}}</td>
+                    <td>{{$user->gioi_tinh == 1 ? 'nam' : 'nữ'}}</td>
                     <td>{{$user->trang_thai == 1 ? 'hoạt động' : 'không hoạt động' }}</td>
                     <td>
-                        <a href="{{ route('user.edit',$user->id) }}" class="btn btn-outline-primary" style="width: 50px; ">
+                        <a href="{{ route('user.show',$user->id) }}" class="btn btn-outline-primary" style="width: 110px; ">
+                            <span> Chi tiết </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ route('user.edit',$user->id) }}" class="btn btn-dark" style="width: 50px; ">
                             <i data-feather="edit"></i>
                         </a>
 
                         <form action="{{ route('user.destroy',$user->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Bạn có đồng ý xóa hay không?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-primary" style="width: 50px; ">
+                            <button type="submit" class="btn btn-dark" style="width: 50px; ">
                                 <i data-feather="trash-2"></i>
                             </button>
                         </form>

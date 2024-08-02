@@ -18,6 +18,9 @@ class ChucVu extends Model
         ->where('id', $id)
         ->update($data);
     }
+    public function user(){
+        return $this->hasMany(User::class);
+    }
 
     public $timestamps = false;
 }

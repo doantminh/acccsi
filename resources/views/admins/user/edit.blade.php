@@ -52,7 +52,7 @@
                 <input type="text" class="form-control" name="dia_chi" placeholder="Nhập Địa chỉ" value="{{$user->dia_chi}}">
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label class="form-label">Chức vụ:</label>
                 <select class="form-select" name="chuc_vu_id">
                     <option selected>Chức vụ</option>
@@ -62,7 +62,7 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
-            </div>
+            </div> -->
 
             <div class="mb-3">
                 <label class="form-label">trạng thái:</label>

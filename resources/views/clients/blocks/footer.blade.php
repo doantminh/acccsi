@@ -74,7 +74,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-12 col-lg-4 text-md-center order-1 order-lg-2 ">
-                    <a class="d-inline-block" href="index-2.html">
+                    <a class="d-inline-block" href="{{route('home.index')}}">
                         <img class="lazy-image img-fluid light-mode-img" src="#" data-src="{{ asset('assets/client/images/others/logo.png') }}" width="179" height="26" alt="Glowing - Bootstrap 5 HTML Templates">
                         <img class="lazy-image dark-mode-img img-fluid" src="#" data-src="{{ asset('assets/client/images/others/logo-white.png') }}" width="179" height="26" alt="Glowing - Bootstrap 5 HTML Templates">
                     </a>

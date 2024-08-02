@@ -11,8 +11,9 @@ class DonHangController extends Controller
 {
     public function index(){
         $donhang = DB::table('don_hangs')->get();
+        $trangThai = DonHang::TRANG_THAI_DON_HANG;
         $title = "Danh sách đơn hàng";
-        return view('admins.donhang.index',compact('title','donhang'));
+        return view('admins.donhang.index',compact('title','donhang','trangThai'));
     }
     public function create(){
         $taikhoan = DB::table('tai_khoans')->get();
@@ -26,5 +27,15 @@ class DonHangController extends Controller
             DonHang::create($params);
             return redirect()->route('donhang.index')->with('success', 'Thêm chức vụ thành công!');
         }
+    }
+    public function show(string $id){
+        $donhang = DonHang::query()->findOrFail($id);
+
+        $title = "Chi tiết đơn hàng";
+        $trangThaidh = DonHang::TRANG_THAI_DON_HANG;
+        $trangThaitt = DonHang::TRANG_THAI_THANH_TOAN;
+
+
+        return view('admins.donhang.detail',compact('title','trangThaidh','donhang','trangThaitt'));
     }
 }
